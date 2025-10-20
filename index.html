@@ -1,14 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Himnarios App Churchill</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 497.27 367.98'><path fill='%23ff8a65' d='M216.39 5.88c-.15-2.7 1.84-6.09 4.86-5.84C239.6 0 257.97.05 276.32.03c3.08-.35 5.43 2.95 4.94 5.84-.07 23.75.02 47.49-.06 71.24 24.87-.01 49.74-.01 74.59 0l2.83 2.92c.02 18.63.11 37.28-.05 55.91.11 2.26-2.05 3.48-3.47 4.84-24.63-.11-49.28.04-73.92-.07.02 42.17.11 84.36-.04 126.54 17.69-13.08 36.84-24.39 57.64-31.76 29.14-10.49 60.64-13.02 91.32-10.46 21.37 2.06 42.51 7.1 62.35 15.37 2.11.75 3.53 2.52 4.81 4.28-.04 22.8 0 45.59-.01 68.39-1.56 2.13-3.4 4.54-6.27 4.76-5.03-.66-9.83-2.42-14.69-3.75-31.11-9.18-64.02-12.46-96.26-8.98-42.51 4.12-83.1 22.83-114.82 51.27-5.13 3.71-8.65 10.03-15.11 11.57-6.07.55-9.45-5.53-13.71-8.78-34.89-33.03-81.89-52.95-129.9-54.93-23.9-1.5-47.94.7-71.25 6.17-9.66 2-18.93 5.56-28.6 7.52-1.15-.45-2.3-.89-3.45-1.3-2.17-1.89-3.48-4.43-3.16-7.37.14-20.81-.09-41.64.12-62.46-.26-3.53 2.93-5.76 5.89-6.83 40.29-16.08 85.31-20.06 127.8-11.51 30.13 6.15 58.49 19.98 82.7 38.83-.34-42.19-.11-84.37-.12-126.56-24.19.02-48.39.02-72.58 0-2.38.3-3.57-2.13-4.92-3.62.06-17.94-.01-35.88.04-53.82-.24-2.76 1.76-6.45 4.88-6.17 24.21-.05 48.4-.02 72.61 0-.16-23.75-.01-47.49-.07-71.24Z' /></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #f4f6f7;
+            --text-color: #34495e;
+            --card-bg-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        #logo-container {
+            margin-bottom: 1rem;
+            /* Estilos para tu logo SVG */
+            /* Ejemplo: width: 100px; height: 100px; */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+
+        header h1 {
+            color: var(--secondary-color);
+            margin: 0;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            color: var(--text-color);
+        }
+
+        .button-download {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--card-bg-color);
+            padding: 0.8rem 1.5rem;
+            margin-top: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-download:hover {
+            background-color: #3c5064;
+            /* Un poco más claro que --secondary-color */
+            transform: translateY(-2px);
+        }
+
+        #hymn-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #hymn-list li a {
+            display: block;
+            background-color: var(--card-bg-color);
+            color: var(--text-color);
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        #hymn-list li a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 
 <body>
-    acceso a himnos
+    <div class="container">
+        <header>
+            <div id="logo-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497.27 367.98" width="100" height="100">
+                    <path fill='#ff8a65'
+                        d="M216.39 5.88c-.15-2.7 1.84-6.09 4.86-5.84C239.6 0 257.97.05 276.32.03c3.08-.35 5.43 2.95 4.94 5.84-.07 23.75.02 47.49-.06 71.24 24.87-.01 49.74-.01 74.59 0l2.83 2.92c.02 18.63.11 37.28-.05 55.91.11 2.26-2.05 3.48-3.47 4.84-24.63-.11-49.28.04-73.92-.07.02 42.17.11 84.36-.04 126.54 17.69-13.08 36.84-24.39 57.64-31.76 29.14-10.49 60.64-13.02 91.32-10.46 21.37 2.06 42.51 7.1 62.35 15.37 2.11.75 3.53 2.52 4.81 4.28-.04 22.8 0 45.59-.01 68.39-1.56 2.13-3.4 4.54-6.27 4.76-5.03-.66-9.83-2.42-14.69-3.75-31.11-9.18-64.02-12.46-96.26-8.98-42.51 4.12-83.1 22.83-114.82 51.27-5.13 3.71-8.65 10.03-15.11 11.57-6.07.55-9.45-5.53-13.71-8.78-34.89-33.03-81.89-52.95-129.9-54.93-23.9-1.5-47.94.7-71.25 6.17-9.66 2-18.93 5.56-28.6 7.52-1.15-.45-2.3-.89-3.45-1.3-2.17-1.89-3.48-4.43-3.16-7.37.14-20.81-.09-41.64.12-62.46-.26-3.53 2.93-5.76 5.89-6.83 40.29-16.08 85.31-20.06 127.8-11.51 30.13 6.15 58.49 19.98 82.7 38.83-.34-42.19-.11-84.37-.12-126.56-24.19.02-48.39.02-72.58 0-2.38.3-3.57-2.13-4.92-3.62.06-17.94-.01-35.88.04-53.82-.24-2.76 1.76-6.45 4.88-6.17 24.21-.05 48.4-.02 72.61 0-.16-23.75-.01-47.49-.07-71.24Z" />
+                </svg>
+            </div>
+            <h1>Himnarios de la App Churchill</h1>
+            <p>Haz clic en el botón de abajo para descargar todas las pistas.</p>
+            <a href="https://github.com/xtiam57/churchill-hymnal-tracks/archive/refs/heads/main.zip" target="_blank"
+                download="pistas.zip" class="button-download">Descargar Pistas MP3
+            </a>
+        </header>
+        <main>
+            <ul id="hymn-list">
+                <li><a>Himnario Bautista</a></li>
+                <li><a>El Majestuoso</a></li>
+                <li><a>Himnos de Gracia</a></li>
+                <li><a>Coritario Bautista</a></li>
+                <li><a>Apéndice (App Churchill)</a></li>
+            </ul>
+        </main>
+    </div>
 </body>
 
 </html>
